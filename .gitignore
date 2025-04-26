@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.npy
+*.pkl
+*.log
+.DS_Store
+.env
+*.yaml
+faces/
