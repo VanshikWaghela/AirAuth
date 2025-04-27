@@ -107,10 +107,26 @@ For optimal performance, follow these calibration steps when starting the applic
    - Practice each gesture while observing the on-screen feedback
    - Pay attention to the UI overlay which shows the current detected gesture
 
+## 🖐️ Gesture Controls
+
+1. **Basic Controls:**
+   - **Cursor Movement**: Index finger extended
+   - **Left Click**: Pinch with thumb and index finger (other fingers closed)
+   - **Right Click**: Pinch with thumb and middle finger (ring and pinky closed)
+   - **Scroll**: Open palm with upward/downward movement
+
+2. **Mode Controls:**
+   - **Drawing Mode Toggle**: V-sign (index and middle fingers extended)
+   - **Play/Pause Media**: Closed fist gesture
+
+3. **Two-handed Gestures:**
+   - **Zoom In/Out**: Move both hands apart/together
+   - **Tab Switching**: Two-finger horizontal swipe (both hands moving in same direction)
+
 ## 💡 Tips for Best Performance
 
 1. **Hand Visibility:**
-   - Keep your hand within the camera frame at all times
+   - Keep your hands within the camera frame at all times
    - Avoid rapid movements that might cause tracking loss
    - Maintain a consistent distance from the camera
 
@@ -132,7 +148,8 @@ For optimal performance, follow these calibration steps when starting the applic
 5. **Two-handed Gestures:**
    - Ensure both hands are clearly visible in the frame
    - Keep hand movements synchronized for zoom gestures
+   - For tab switching, move both hands in the same horizontal direction
 
 *This documentation is automatically updated when changes are made to the gesture control system.*
 
-Last updated: April 26, 2025
+Last updated: May 15, 2023
