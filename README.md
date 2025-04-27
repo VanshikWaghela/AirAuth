@@ -150,6 +150,4 @@ For optimal performance, follow these calibration steps when starting the applic
    - Keep hand movements synchronized for zoom gestures
    - For tab switching, move both hands in the same horizontal direction
 
-*This documentation is automatically updated when changes are made to the gesture control system.*
 
-Last updated: May 15, 2023
