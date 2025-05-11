@@ -2,8 +2,6 @@
 
 > **Control your computer with gestures, secured by your face.**
 
-![GitHub License](https://img.shields.io/github/license/VanshikWaghela/AirAuth)
-
 ## What is AirAuth?
 
 AirAuth is a touchless computer control system that combines the magic of hand gestures with the security of facial recognition. Wave goodbye to your mouse and keyboard as you navigate your Mac using intuitive hand movements – but only after your face has been authenticated.
@@ -114,11 +112,6 @@ Contributions welcome! Feel free to:
 - Suggest features
 - Submit pull requests
 
-## 📝 License
-
-This project is licensed under the MIT License - see LICENSE file for details.
-
----
 
 <p align="center">Made with ❤️ by <a href="https://github.com/VanshikWaghela">Vanshik Waghela</a></p>
 
