@@ -1,153 +1,125 @@
-AirAuth: Gesture Control System
+# AirAuth 🖐️✨
 
-# 🔒 **Touchless security meets intuitive control.**
-Control your computer using real-time hand gestures, but only after securely authenticating your face.
+> **Control your computer with gestures, secured by your face.**
 
-AirAuth is a sophisticated macOS-compatible webcam-based gesture control system that allows you to control your computer using hand gestures. Designed with a focus on intuitive interactions, smooth transitions, and visual feedback, CV_Mouse aims to provide a natural and delightful user experience. The system now includes a face recognition security gate that only enables gestures when a recognized user is present.
+![GitHub License](https://img.shields.io/github/license/VanshikWaghela/AirAuth)
 
-## 🚀 Setup Instructions (macOS)
+## What is AirAuth?
 
-1. **Prerequisites:**
-   - macOS operating system
-   - Webcam access
-   - Conda environment
-   - Accessibility and Camera permissions granted
+AirAuth is a touchless computer control system that combines the magic of hand gestures with the security of facial recognition. Wave goodbye to your mouse and keyboard as you navigate your Mac using intuitive hand movements – but only after your face has been authenticated.
 
-2. **Installation:**
-   ```bash
-   # Clone the repository
-   git clone https://github.com/yourusername/CV_Mouse.git
-   cd CV_Mouse
+<p align="center">
+  <img src="https://github.com/VanshikWaghela/AirAuth/assets/yourAssetID/airauth_demo.gif" alt="AirAuth Demo" width="600">
+</p>
 
-   # Activate the conda environment
-   conda activate vis
+## ✨ Key Features
 
-   # Install dependencies (if needed)
-   pip install -r requirements.txt
+- **Touchless Control**: Navigate your Mac with natural hand gestures
+- **Face Authentication**: Biometric security layer ensures only authorized users can control the system
+- **Drawing Mode**: Switch to a virtual canvas with a simple gesture
+- **Ultra-Smooth Cursor**: Advanced filtering algorithms provide precise cursor control
+- **Rich Gesture Set**: From clicks to scrolls, tab switching to media controls
+- **Multi-user Support**: Enroll multiple users for shared access
 
-   # Create faces directory if it doesn't exist
-   mkdir -p faces
-   ```
+## 🖐️ Gesture Library
 
-3. **Running the Application:**
-   ```bash
-   # Enroll a user (required before first use)
-   python app.py --enroll username
+| Gesture | Action |
+|---------|--------|
+| 👆 Index finger | Move cursor |
+| 👌 Thumb-index pinch | Left click |
+| 👌 Thumb-middle pinch | Right click |
+| ✌️ Victory sign | Toggle drawing mode |
+| 🖐️ Open palm up/down | Scroll |
+| ✌️ Two-finger swipe | Switch tabs |
+| 👊 Closed fist | Play/pause media |
+| 🤏🤏 Two-hand pinch | Zoom in/out |
 
-   # Start the gesture control system
-   python app.py
+## 🚀 Quick Start
 
-   # Enable debug mode (shows face distance metrics)
-   python app.py --debug
-   ```
+### Prerequisites
+- macOS
+- Webcam
+- Python with Conda environment
 
-## 🔒 Face Recognition Gate
+### Installation
 
-The system now includes a face recognition security layer that only enables gesture control when a recognized user is present:
+```bash
+# Clone the repository
+git clone https://github.com/VanshikWaghela/AirAuth.git
+cd AirAuth
 
-1. **User Enrollment:**
-   - Run `python app.py --enroll username` to register a new user
-   - Follow the on-screen prompts to capture 5 face images
-   - Press spacebar to capture each image when your face is detected
-   - Press ESC to exit enrollment mode
+# Create and activate conda environment
+conda create -n airauth python=3.9
+conda activate airauth
 
-2. **Authentication:**
-   - When the application starts, it will remain locked until a recognized face is detected
-   - A red banner with "🔒 Access Denied" indicates the locked state
-   - When a recognized user is detected, a green banner with the username appears
-   - Gestures are only active in the unlocked state
+# Install dependencies
+pip install -r requirements.txt
+```
 
-3. **Configuration:**
-   - Edit `config.yaml` to adjust face recognition settings:
-     - `model`: "hog" (faster) or "cnn" (more accurate, requires GPU)
-     - `tolerance`: Lower values (e.g., 0.45) are more strict, higher values (e.g., 0.65) are more permissive
-     - `consecutive_frames`: Number of frames required to change lock/unlock state
-     - `enroll_snapshots`: Number of images to capture during enrollment
+### First-time Setup
 
-## 🖐 Gesture Commands Reference
+```bash
+# Enroll your face (required before first use)
+python app.py --enroll your_name
+```
 
-| Gesture | Description | Function |
-|---------|-------------|----------|
-| **Index finger extended** | Extend only your index finger | Move the cursor |
-| **Thumb-Index pinch** | Touch your thumb and index finger together | Left mouse click |
-| **Thumb-Middle finger pinch** | Touch your thumb and middle finger together | Right mouse click |
-| **Victory sign (V)** | Hold steady V-sign with index and middle fingers | Toggle drawing mode on/off |
-| **Index finger in drawing mode** | Move index finger when drawing mode is active | Draw on screen |
-| **Open palm up/down** | All fingers extended, move hand up/down | Scroll up/down |
-| **Two-finger swipe left** | Index and middle finger extended, swipe left | Switch to previous tab |
-| **Two-finger swipe right** | Index and middle finger extended, swipe right | Switch to next tab |
-| **Index finger + wrist rotation** | Only index extended, rotate wrist | Adjust system volume |
-| **Two-hand pinch in/out** | Both hands pinching, move apart/together | Zoom in/out |
+### Launch AirAuth
 
-## ⌨️ Keyboard Controls
+```bash
+# Start with standard settings
+python app.py
 
-| Key | Function |
-|-----|----------|
-| `s` | Save drawing (when in drawing mode) |
-| `q` or `Esc` | Quit application |
+# Or enable debug mode
+python app.py --debug
+```
 
-## 🎯 Calibration Guide
+## 🔒 Security First
 
-For optimal performance, follow these calibration steps when starting the application:
+AirAuth uses computer vision to create a security layer that only enables gesture control for recognized users:
 
-1. **Positioning:**
-   - Sit approximately 50-70cm from your webcam
-   - Ensure your hands are clearly visible in the frame
-   - Use a neutral background for better hand detection
+- **Facial Recognition**: Uses face_recognition library with HOG or CNN models
+- **Adaptive Security**: Configurable tolerance levels for different security needs
+- **Grace Period**: Brief window of continued access if your face is temporarily not visible
 
-2. **Lighting:**
-   - Use consistent, even lighting
-   - Avoid strong backlighting or shadows on your hands
+## 💡 Tips for Best Results
 
-3. **Initial Hand Pose:**
-   - Begin with an open palm facing the camera
-   - Move your hand slowly at first to allow the system to track it properly
+- Position yourself 50-70cm from the webcam
+- Ensure consistent, even lighting
+- Keep your hand movements deliberate and within the frame
+- Start with small gestures until you get comfortable
 
-4. **Gesture Practice:**
-   - Practice each gesture while observing the on-screen feedback
-   - Pay attention to the UI overlay which shows the current detected gesture
+## 🛠️ Configuration
 
-## 🖐️ Gesture Controls
+Fine-tune AirAuth by editing `config.yaml`:
 
-1. **Basic Controls:**
-   - **Cursor Movement**: Index finger extended
-   - **Left Click**: Pinch with thumb and index finger (other fingers closed)
-   - **Right Click**: Pinch with thumb and middle finger (ring and pinky closed)
-   - **Scroll**: Open palm with upward/downward movement
+```yaml
+# Example configurations
+detection:
+  min_confidence: 0.75
 
-2. **Mode Controls:**
-   - **Drawing Mode Toggle**: V-sign (index and middle fingers extended)
-   - **Play/Pause Media**: Closed fist gesture
+gestures:
+  left_click:
+    hold_frames: 1
+    threshold: 0.06
+    
+face_recognition:
+  model: "hog"  # "hog" (faster) or "cnn" (more accurate)
+  tolerance: 0.5
+```
 
-3. **Two-handed Gestures:**
-   - **Zoom In/Out**: Move both hands apart/together
-   - **Tab Switching**: Two-finger horizontal swipe (both hands moving in same direction)
+## 🤝 Contributing
 
-## 💡 Tips for Best Performance
+Contributions welcome! Feel free to:
+- Report bugs
+- Suggest features
+- Submit pull requests
 
-1. **Hand Visibility:**
-   - Keep your hands within the camera frame at all times
-   - Avoid rapid movements that might cause tracking loss
-   - Maintain a consistent distance from the camera
+## 📝 License
 
-2. **Gesture Execution:**
-   - Make deliberate, clear gestures
-   - Hold gestures steady for a moment for better recognition
-   - For cursor control, use small movements for precision
+This project is licensed under the MIT License - see LICENSE file for details.
 
-3. **System Resources:**
-   - Close resource-intensive applications for smoother performance
-   - Monitor the FPS indicator in the UI overlay
-   - If performance drops, try reducing other background processes
+---
 
-4. **Drawing Mode:**
-   - Use slow, deliberate movements for precise drawing
-   - Press 's' to save your drawing to the Desktop
-   - Use the V-sign gesture to toggle drawing mode on/off
-
-5. **Two-handed Gestures:**
-   - Ensure both hands are clearly visible in the frame
-   - Keep hand movements synchronized for zoom gestures
-   - For tab switching, move both hands in the same horizontal direction
+<p align="center">Made with ❤️ by <a href="https://github.com/VanshikWaghela">Vanshik Waghela</a></p>
 
 
